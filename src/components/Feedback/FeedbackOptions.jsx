@@ -1,7 +1,7 @@
 import { Box } from 'components/Box/Box';
-
 import { Title } from './Feedback.styled';
 import { Button } from './Feedback.styled';
+import PropTypes from 'prop-types';
 
 const shortid = require('shortid');
 
@@ -24,4 +24,9 @@ export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
       })}
     </Box>
   );
+};
+
+FeedbackOptions.propTypes = {
+  options: PropTypes.object.isRequired,
+  onLeaveFeedback: PropTypes.func.isRequired,
 };
