@@ -1,6 +1,6 @@
 import { Box } from 'components/Box/Box';
-import { ListItem } from './Feedback.styled';
-import { Title } from './Feedback.styled';
+import { ListItem } from '../Feedback.styled/Feedback.styled';
+import { Title } from '../Feedback.styled/Feedback.styled';
 import PropTypes from 'prop-types';
 
 export const Statistics = ({

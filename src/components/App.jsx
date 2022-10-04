@@ -1,7 +1,7 @@
 import { Component } from 'react';
-import { FeedbackOptions } from './Feedback/FeedbackOptions';
-import { Statistics } from './Feedback/Statistics';
-import { Section } from './Feedback/Section';
+import { FeedbackOptions } from './Feedback/FeedbackOptions/FeedbackOptions';
+import { Statistics } from './Feedback/Statistics/Statistics';
+import { Section } from './Feedback/Section/Section';
 
 export class App extends Component {
   state = {
@@ -9,16 +9,10 @@ export class App extends Component {
     neutral: 0,
     bad: 0,
   };
-  handleClick = e => {
-    if (e.currentTarget.id === 'good') {
-      this.setState(prevState => ({
-        good: prevState.good + 1,
-      }));
-    } else if (e.currentTarget.id === 'neutral') {
-      this.setState(prevState => ({ neutral: prevState.neutral + 1 }));
-    } else if (e.currentTarget.id === 'bad') {
-      this.setState(prevState => ({ bad: prevState.bad + 1 }));
-    }
+  handleClick = option => {
+    this.setState(prevState => ({
+      [option]: prevState[option] + 1,
+    }));
   };
 
   countTotalFeedback = () => {

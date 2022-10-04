@@ -1,6 +1,6 @@
 import { Box } from 'components/Box/Box';
-import { Title } from './Feedback.styled';
-import { Button } from './Feedback.styled';
+import { Title } from '../Feedback.styled/Feedback.styled';
+import { Button } from '../Feedback.styled/Feedback.styled';
 import PropTypes from 'prop-types';
 
 const shortid = require('shortid');
@@ -16,7 +16,7 @@ export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
           <Button
             key={shortid.generate()}
             id={option}
-            onClick={onLeaveFeedback}
+            onClick={() => onLeaveFeedback(option)}
           >
             {result}
           </Button>
